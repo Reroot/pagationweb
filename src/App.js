@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import { Component } from 'react';
+import { Posts } from './components/Posts';
 //use effect allows us to mimic lifecycle during a fire
 const App = () => {
   // gettter and setter pattern using hooks
@@ -25,7 +25,7 @@ const App = () => {
   console.log(posts);
   return (
     <div>
-
+      <Posts posts={posts} loading={loading}/>
     </div>
   );
 };
