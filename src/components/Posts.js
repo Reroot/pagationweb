@@ -1,24 +1,22 @@
-import React from 'react';
+
 //racf
 //get our props passed down
-export const Posts = ({posts, loading}) => {
-    
-    if(loading === true) {
-        return <h2>Loading....</h2>//add animations
-    }
+import React from 'react';
 
-    
-     
-    return (
-            <ul className='list-group'>
-                {/* //make sure to mass props downf rom parent
-                //otherwise this wont do anything. */}
-                {posts.map(post => (
-                    <li key={post.id} className='list-group-item'>
-                        {post.title}
-                    </li>
-            ))}
-            </ul>
-    );
+const Posts = ({ posts, loading }) => {
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
 
+  return (
+    <ul className='list-group mb-4'>
+      {posts.map(post => (
+        <li key={post.id} className='list-group-item'>
+          {post.title}
+        </li>
+      ))}
+    </ul>
+  );
 };
+
+export default Posts;
